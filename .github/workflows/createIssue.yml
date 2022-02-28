@@ -8,7 +8,7 @@ on: [push]
 jobs:
   create_issue:
     runs-on: ubuntu-latest
-    permissions:
+#    permissions:
 #      issues: write
     steps:
       - name: push a random file
