@@ -1,0 +1,17 @@
+name: Push Hook
+on: [push]
+jobs:
+  trigger-workFlow:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Trigger dispatch for Github actions
+        run: |
+          curl --location --request POST 'https://api.github.com/repos/sethij/GitHubActions/dispatches' \
+          --header 'Accept: application/vnd.github.v3+json' \
+          --header 'Authorization: Basic ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'Content-Type: text/plain' \
+          --data-raw '{
+              "event_type":  "build"
+          }'
