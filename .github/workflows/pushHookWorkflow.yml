@@ -1,5 +1,8 @@
 name: Push Hook
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - main
 jobs:
   trigger-workFlow:
     runs-on: ubuntu-latest
