@@ -3,8 +3,6 @@ on: [push]
 jobs:
   trigger-workFlow:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Trigger dispatch for Github actions
         run: |
